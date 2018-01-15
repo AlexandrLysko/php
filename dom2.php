@@ -48,6 +48,7 @@ for ($i = 1; $i <=10; $i++) {
 5. Создать массив из дней недели. С помощью цикла foreach выведите все дни недели, <br> 
 а текущий день выведите жирным. Текущий день можно получить с помощью функции date. Название дней выводить по-русски 
 */
+echo "<br>"."<hr> ";
 
 $arr2 = ['пн'=>'Monday', 'вт'=>'Tuesday', 'ср'=>'Wednesday', 'чт'=>'Thursday', 'пт'=>'Friday', 'сб'=> 'Saturday', 'вс'=>'Sunday'];
 $day = date("l");
@@ -66,5 +67,34 @@ foreach ($arr2 as $key=>$elem) {
 6. Вывести все числа, меньше 30, у которых есть хотя бы одна цифра 3 и которые не делятся на 5. 
 Посмотрите функцию strpos! 
 */
+
+echo "<hr> ";
+
+for ($i = 1; $i < 30; $i++) {
+	
+	if (strpos($i, '3', 1) and ($i % 5) == 0){
+		echo $i."<br>";
+	} 
+}
+
+
+//7**. Отсортировать массив по 'price'
+
+	
+$arr4 = [
+'1'=> ['price' => 10,'count' => 2],
+'2'=> ['price' => 5,'count' => 5],
+'3'=> ['price' => 8,'count' => 5],
+'4'=> ['price' => 12,'count' => 4],
+'5'=> ['price' => 8,'count' => 4],
+];
+
+
+foreach ($arr4 as $key=>$elem) {
+	$data_price[$key]=$elem['price'];
+}
+array_multisort($data_price, SORT_NUMERIC, $arr4);
+var_export($arr4);
+
 
 ?>
